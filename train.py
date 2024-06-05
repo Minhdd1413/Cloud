@@ -5,9 +5,6 @@ import torch.nn.functional as F
 import torch.optim as optim
 from torchvision import datasets, transforms
 from torch.optim.lr_scheduler import StepLR
-import torch
-from torch.optim.lr_scheduler import StepLR
-from torchvision import datasets, transforms
 
 
 class Net(nn.Module):
@@ -34,6 +31,7 @@ class Net(nn.Module):
         x = self.fc2(x)
         output = F.log_softmax(x, dim=1)
         return output
+
 
 def train(model, device, train_loader, optimizer, epoch):
     model.train()
@@ -101,13 +99,6 @@ def main():
         datasets.MNIST('../data', train=False, transform=transforms.Compose([
                            transforms.ToTensor(),
                            transforms.Normalize((0.1307,), (0.3081,))
-    import torch.nn as nn
-    import torch.nn.functional as F
-    import torch.optim as optim
-    def train(log_interval, model, device, train_loader, optimizer, epoch):
-        model.train()
-        # Rest of the code...
-
                        ])),
         batch_size=test_batch_size, shuffle=True, **kwargs)
 
