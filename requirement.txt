@@ -1,5 +1,5 @@
-streamlit
-torch
-pandas
-pillow
-torchvision
+python3-streamlit
+python3-torch
+python3-pandas
+python3-pillow
+python3-torchvision
